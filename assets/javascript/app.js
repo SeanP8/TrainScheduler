@@ -30,7 +30,7 @@ $("#submit").on("click", function () {
 
     name = $("#train-name").val().trim();
     destination = $("#destination").val().trim();
-    firstTrain = moment($("#train1-time").val().trim(), "MM/DD/YYY").format("X");
+    firstTrain = $("#train1-time").val().trim();
     frequency = $("#frequency").val().trim();
 
 
@@ -49,17 +49,17 @@ $("#submit").on("click", function () {
         firstTrain: firstTrain,
         frequency: frequency,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
-    })
+    });
 
     
-    // // Clears all of the text-boxes
+    // Clears all of the text-boxes
 
-    // $("#train-name").val("");
-    // $("#destination").val("");
-    // $("#train1-time").val("");
-    // $("#frequency").val("");
+    $("#train-name").val("");
+    $("#destination").val("");
+    $("#train1-time").val("");
+    $("#frequency").val("");
 
-})
+});
 
 
 // 3. Create firebase event for adding info from the database and a row in the html when a user adds an entry
